@@ -1,0 +1,27 @@
+#nome {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+#desc {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    background-color: #EFF7CF;
+}
+
+#desc-texto {
+    font-style: italic;
+}
+.lidarComPessoas {
+    font-size: 15px;
+}
+.lógicaRazão {
+    font-size: 18px;
+}
+.diálogo {
+    font-size: 21px;
+}
+.pacífico {
+    font-size: 24px;
+}
