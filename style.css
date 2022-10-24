@@ -1,17 +1,27 @@
+body {
+    background-color: #EFF7CF;
+}
 #nome {
     font-family: 'Courier New', Courier, monospace;
+    text-align: center;
 }
 
 #desc {
     font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    top: 306px;
+    left: 330px;
 }
-
-body {
-    background-color: #EFF7CF;
+#fotominha {
+    background-color: lightblue;
+    padding-block: 20px;
 }
 
 #desc-texto {
     font-style: italic;
+    position: absolute;
+    top: 336px;
+    left: 330px;
 }
 .lidarComPessoas {
     font-size: 15px;
