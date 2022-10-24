@@ -24,14 +24,26 @@ body {
     left: 330px;
 }
 .lidarComPessoas {
-    font-size: 15px;
+    font-size: 18px;
 }
 .lógicaRazão {
     font-size: 18px;
 }
 .diálogo {
-    font-size: 21px;
+    font-size: 18px;
 }
 .pacífico {
-    font-size: 24px;
+    font-size: 18px;
+}
+
+h3#habilidades {
+    padding-left: 20px;
+}
+
+p {
+    font-size: 18px;
+}
+
+ul li:nth-child(odd) {
+    text-decoration: underline;
 }
