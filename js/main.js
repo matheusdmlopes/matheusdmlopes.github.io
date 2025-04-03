@@ -9,8 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Inicializa EmailJS
-    // Você precisará criar uma conta em https://www.emailjs.com/ e substituir 'YOUR_USER_ID' pelo seu ID de usuário
-    emailjs.init("iQikSNq6W3PmUAB-H");
+    emailjs.init({
+        publicKey: "lQikSNq6W3PmUAB-H",
+    });
 
     // Seleciona elementos DOM
     const burger = document.querySelector('.burger');
@@ -85,14 +86,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Coletando os dados do formulário
             const formData = {
-                name: contactForm.querySelector('#name').value,
-                email: contactForm.querySelector('#email').value,
+                from_name: contactForm.querySelector('#name').value,
+                reply_to: contactForm.querySelector('#email').value,
                 message: contactForm.querySelector('#message').value,
-                to_email: 'matheusdemarcolopes@gmail.com'
+                to_name: "Matheus Lopes",
             };
 
             // Enviando o e-mail usando EmailJS
-            // Substitua 'your_service_id' e 'your_template_id' pelos valores da sua conta EmailJS
             emailjs.send('service_92dl55k', 'template_72sfc6i', formData)
                 .then(function (response) {
                     console.log('E-mail enviado com sucesso!', response);
