@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', function () {
         offset: 100
     });
 
+    // Inicializa EmailJS
+    // Você precisará criar uma conta em https://www.emailjs.com/ e substituir 'YOUR_USER_ID' pelo seu ID de usuário
+    emailjs.init("iQikSNq6W3PmUAB-H");
+
     // Seleciona elementos DOM
     const burger = document.querySelector('.burger');
     const nav = document.querySelector('.nav-links');
@@ -67,39 +71,53 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Formulário de contato (simples, sem back-end)
+    // Formulário de contato com envio de e-mail via EmailJS
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            // Aqui você pode adicionar a lógica para enviar o formulário via email
-            // ou integrar com algum serviço de formulários
-
-            // Exemplo simples de feedback:
-            const formElements = contactForm.elements;
-            let formData = {};
-
-            for (let i = 0; i < formElements.length; i++) {
-                if (formElements[i].name) {
-                    formData[formElements[i].name] = formElements[i].value;
-                }
-            }
-
-            console.log('Dados do formulário:', formData);
-
-            // Feedback visual
+            // Feedback visual - Mudando o botão para "Enviando..."
             const button = contactForm.querySelector('button[type="submit"]');
             const originalText = button.textContent;
-            button.textContent = 'Mensagem Enviada!';
+            button.textContent = 'Enviando...';
             button.disabled = true;
 
-            // Resetar o formulário após um tempo
-            setTimeout(() => {
-                contactForm.reset();
-                button.textContent = originalText;
-                button.disabled = false;
-            }, 3000);
+            // Coletando os dados do formulário
+            const formData = {
+                name: contactForm.querySelector('#name').value,
+                email: contactForm.querySelector('#email').value,
+                message: contactForm.querySelector('#message').value,
+                to_email: 'matheusdemarcolopes@gmail.com'
+            };
+
+            // Enviando o e-mail usando EmailJS
+            // Substitua 'your_service_id' e 'your_template_id' pelos valores da sua conta EmailJS
+            emailjs.send('service_92dl55k', 'template_72sfc6i', formData)
+                .then(function (response) {
+                    console.log('E-mail enviado com sucesso!', response);
+
+                    // Feedback visual de sucesso
+                    button.textContent = 'Mensagem Enviada!';
+
+                    // Resetar o formulário após um tempo
+                    setTimeout(() => {
+                        contactForm.reset();
+                        button.textContent = originalText;
+                        button.disabled = false;
+                    }, 3000);
+                })
+                .catch(function (error) {
+                    console.error('Erro ao enviar e-mail:', error);
+
+                    // Feedback visual de erro
+                    button.textContent = 'Erro ao enviar!';
+
+                    setTimeout(() => {
+                        button.textContent = originalText;
+                        button.disabled = false;
+                    }, 3000);
+                });
         });
     }
 
