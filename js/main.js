@@ -87,8 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Coletando os dados do formulário
             const formData = {
-                name: contactForm.querySelector('#name').value,
-                email: contactForm.querySelector('#email').value,
+                from_name: contactForm.querySelector('#name').value,
+                from_email: contactForm.querySelector('#email').value,
                 message: contactForm.querySelector('#message').value
             };
 
