@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 from_name: contactForm.querySelector('#name').value,
                 reply_to: contactForm.querySelector('#email').value,
                 message: contactForm.querySelector('#message').value,
-                to_name: "Matheus Lopes",
+                to_email: 'matheusdemarcolopes@gmail.com'
             };
 
             // Enviando o e-mail usando EmailJS
