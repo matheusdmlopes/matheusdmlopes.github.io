@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
     emailjs.init({
         publicKey: "iQikSNq6W3PmUAB-H",
     });
+    console.log("EmailJS inicializado");
 
     // Seleciona elementos DOM
     const burger = document.querySelector('.burger');
@@ -86,8 +87,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Coletando os dados do formulário
             const formData = {
-                name: contactForm.querySelector('#name').value,
-                email: contactForm.querySelector('#email').value,
+                from_name: contactForm.querySelector('#name').value,
+                from_email: contactForm.querySelector('#email').value,
                 message: contactForm.querySelector('#message').value,
                 to_email: 'matheusdemarcolopes@gmail.com'
             };
@@ -112,6 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 })
                 .catch(function (error) {
                     console.error('Erro ao enviar e-mail:', error);
+                    console.error('Detalhes do erro:', JSON.stringify(error));
 
                     // Feedback visual de erro
                     button.textContent = 'Erro ao enviar!';
