@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('Dados do formulário:', formData);
 
             // Enviando o e-mail usando EmailJS
-            emailjs.send('service_92dl55k', 'template_72sfc6i')
+            emailjs.send('service_92dl55k', 'template_72sfc6i', formData)
                 .then(function (response) {
                     console.log('E-mail enviado com sucesso!', response);
 
