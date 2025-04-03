@@ -92,8 +92,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 to_email: 'matheusdemarcolopes@gmail.com'
             };
 
+            // Debug dos dados
+            console.log('Dados do formulário:', formData);
+
             // Enviando o e-mail usando EmailJS
-            emailjs.send('service_92dl55k', 'template_72sfc6i', formData)
+            emailjs.send('service_92dl55k', 'template_72sfc6i')
                 .then(function (response) {
                     console.log('E-mail enviado com sucesso!', response);
 
