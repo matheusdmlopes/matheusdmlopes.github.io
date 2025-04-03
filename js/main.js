@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function () {
     emailjs.init({
         publicKey: "iQikSNq6W3PmUAB-H",
     });
-    console.log("EmailJS inicializado");
 
     // Seleciona elementos DOM
     const burger = document.querySelector('.burger');
@@ -93,12 +92,12 @@ document.addEventListener('DOMContentLoaded', function () {
             };
 
             // Debug dos dados
-            console.log('Dados do formulário:', formData);
+
 
             // Enviando o e-mail usando EmailJS
             emailjs.send('service_92dl55k', 'template_72sfc6i', formData)
                 .then(function (response) {
-                    console.log('E-mail enviado com sucesso!', response);
+
 
                     // Feedback visual de sucesso
                     button.textContent = 'Mensagem Enviada!';
