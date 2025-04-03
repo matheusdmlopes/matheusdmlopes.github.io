@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Inicializa EmailJS
     emailjs.init({
-        publicKey: "lQikSNq6W3PmUAB-H",
+        publicKey: "iQikSNq6W3PmUAB-H",
     });
 
     // Seleciona elementos DOM
