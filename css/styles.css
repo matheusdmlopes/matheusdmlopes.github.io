@@ -48,6 +48,8 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
 }
 
 body {
@@ -55,6 +57,9 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--bg-color);
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 h1,
@@ -97,6 +102,7 @@ button,
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1.5rem;
+    box-sizing: border-box;
 }
 
 .section-padding {
@@ -185,6 +191,8 @@ button,
     background-attachment: fixed;
     position: relative;
     color: white;
+    width: 100%;
+    overflow: hidden;
 }
 
 .hero::before {
@@ -261,6 +269,8 @@ button,
     padding: 0 1.5rem;
     position: relative;
     z-index: 1;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .hero-content h1 {
@@ -415,13 +425,15 @@ button,
 
 /* 
 ===================================
-   PROJETOS
+   PROJETOS/SERVIÇOS
 ===================================
 */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .project-card {
@@ -430,6 +442,7 @@ button,
     overflow: hidden;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    width: 100%;
 }
 
 .project-card:hover {
@@ -590,6 +603,11 @@ button,
 @media screen and (max-width: 768px) {
     body {
         overflow-x: hidden;
+        width: 100%;
+    }
+
+    .hero {
+        background-attachment: scroll;
     }
 
     .nav-links {
@@ -607,6 +625,7 @@ button,
         transition: transform 0.5s ease-in;
         z-index: 1000;
         padding: 5rem 0;
+        max-width: 250px;
     }
 
     .nav-links li {
@@ -687,6 +706,15 @@ button,
         margin: 0.5rem auto;
     }
 
+    .hero-content {
+        padding: 0 1rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+        width: 100%;
+    }
+
     .section-padding {
         padding: 3rem 0;
     }
@@ -695,8 +723,12 @@ button,
         grid-template-columns: 1fr;
     }
 
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
     .project-card {
-        max-width: 300px;
+        max-width: 100%;
         margin: 0 auto;
     }
 
