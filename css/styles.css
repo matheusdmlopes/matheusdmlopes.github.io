@@ -185,10 +185,9 @@ button,
     display: flex;
     flex-direction: column;
     background: var(--bg-dark);
-    background-image: url('../assets/images/hero-bg.jpg');
+    background-image: linear-gradient(135deg, #0a1f44 0%, #1a3a6a 100%);
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
     position: relative;
     color: white;
     width: 100%;
@@ -203,6 +202,8 @@ button,
     width: 100%;
     height: 100%;
     background: linear-gradient(135deg, rgba(10, 31, 68, 0.9), rgba(10, 31, 68, 0.7));
+    background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
 }
 
 .navbar {
