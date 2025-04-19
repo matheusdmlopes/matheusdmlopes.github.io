@@ -91,8 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 message: contactForm.querySelector('#message').value
             };
 
-            // Debug dos dados
-
 
             // Enviando o e-mail usando EmailJS
             emailjs.send('service_92dl55k', 'template_72sfc6i', formData)
